@@ -1,0 +1,37 @@
+---
+title: "Optimization Group Case"
+author: "Group 2-11: Karen, Lancy, Will & Rob"
+date: "December 12, 2017"
+output: pdf_document
+---
+
+#NASDAQ stock Portfolio
+##Expected Returns given Risk Limits
+
+```{r setup, include=FALSE, warning = FALSE, comment = FALSE}
+library("knitr")
+knitr::opts_chunk$set(echo = TRUE)
+opts_chunk$set(tidy.opts=list(width.cutoff=60), tidy = TRUE)
+library(RMySQL)
+```
+```{r, warning = FALSE}
+#connect to the db in MySQL
+con <- dbConnect(RMySQL::MySQL(), dbname = 'nasdaq', username = 'root', password = '4572Q*zS7YPt')
+
+#tell MySQL to load up the bus with data
+res <- dbSendQuery(con, 'select * from portfolio')
+#send the bus over here to Rmd.
+results <- dbFetch(res)
+
+#We've got the results data in our results variable!
+#disconnect from the db now.
+dbDisconnect(con)
+
+#And plot our risk vs. return graph
+plot(results[,2], results[,1],
+     xlab = "Risk", ylab = "Expected Return",
+     main = "NASDAQ Stock Portfolio")
+```
+
+
+At some point your expected returns level off, this is because the stocks are only so risky and eventually you have gotten the maximum return you can expect by investing in the riskiest possible stocks.  This happens at a risk variance around 0.45, with maximum possible expected returns at 8%.  If you are willing to settle for 6.5% expected return the risk variance decreases significantly to 0.1.  If you want to be cautious, you can set an upper risk limit of 0.025 and expect to have just under 5.5% returns.  In the case that a client wants to be even safer, we can simply run the python document again with a much smaller range of risks, and get the corresponding smaller expected returns.
