@@ -1,6 +1,6 @@
 # Optimization
 
-In the optimization course in the MSBA program at the college of William & Mary, I developed non-linear and linear programming skills and discrete optimization techniques. Using programs as accessible as Excel to more complex languages and tools such as Python and Gurobi, I applied these skills to optimize transportation routes, maximize profit, assess risk and more.
+In the optimization course in the MSBA program at the college of William & Mary, I solved non-linear and linear programming problems and practiced discrete optimization techniques by utilizing tools such as Excel, Python and Gurobi. I applied these skills to optimize transportation routes, maximize profit, assess risk and more.
 
 # Summary of work
 
