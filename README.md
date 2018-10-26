@@ -28,6 +28,8 @@ The minimum spanning tree has some interesting applications. For example, after 
 
 The second usage of minimum spanning tree is given as a thought experiment, and it explains how to find a maximum  of products instead of a minimum sum of the graph edges. For this example, we wanted to maximize the probability of a safe transfer of information between government agents in a foreign country. You could apply this concept to any set of points/people/things you want to connect that have some probability of interest. 
 
+Lastly, you can use shortest path algorithms to find how to optimize the scheduling times of different tasks in a project. For example, you can use this for a home construction project. If you know how long each individual task takes, and which tasks must be completed before other tasks, you can input that information as shown to find which tasks lie on the critical path (which means that if they were delayed, then the end date of the overall project would change) and which tasks have some slack time in their completion (so your construction man could be running a little late on them and not impact the end date of your home construction project).
+
 ## Linear programming
 uses Excel to maximize earnings for companies given supply/demand constraints. Sensitivity analysis on the robustness of the optimal solution is also performed in the event that predicted supply or demand is off.
 
